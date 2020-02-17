@@ -28,16 +28,16 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		panel = new JPanel();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		window.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		int length = Integer.parseInt(JOptionPane.showInputDialog("Enter a two-digit positive integer:"));
 		buttonArray = new JButton[length];
 		
-		for (JButton button : buttonArray) {
-			button = new JButton();
-			button.addActionListener(this);
+		for (int i = 0; i < buttonArray.length; i++) {
+			buttonArray[i] = new JButton();
+			buttonArray[i].addActionListener(this);
 		}
-		window.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
-		JOptionPane.showMessageDialog(window, "Try to find the hidden button in this window.");
+		//JOptionPane.showMessageDialog(window, "Try to find the hidden button in this window.");
 		
 		hiddenButton = random.nextInt(length);
 		buttonArray[hiddenButton].setText("ME");
@@ -46,7 +46,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		window.add(panel);
 		window.setVisible(true);
 		
-		Thread.sleep(100);
+		Thread.sleep(400);
 
 		window.remove(panel);
 		for (JButton button : buttonArray) {panel.remove(button);}

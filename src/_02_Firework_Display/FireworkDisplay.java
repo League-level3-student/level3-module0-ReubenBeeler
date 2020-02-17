@@ -22,7 +22,7 @@ public class FireworkDisplay extends JPanel implements ActionListener {
 	private JButton fireButton;
 	private Timer timer;
 	
-	Firework firework = new Firework();
+	Firework firework = new Firework(WIDTH, HEIGHT);
 	
 	public static void main(String[] args) {
 		new FireworkDisplay().start();
@@ -55,7 +55,7 @@ public class FireworkDisplay extends JPanel implements ActionListener {
 	
 	private void fire() {
 		fireButton.setEnabled(false);
-		firework = new Firework();
+		firework = new Firework(WIDTH, HEIGHT);
 		firework.launch();
 		timer.start();		
 	}
