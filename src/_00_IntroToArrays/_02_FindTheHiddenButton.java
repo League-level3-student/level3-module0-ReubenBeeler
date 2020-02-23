@@ -40,19 +40,15 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		//JOptionPane.showMessageDialog(window, "Try to find the hidden button in this window.");
 		
 		hiddenButton = random.nextInt(length);
-		buttonArray[hiddenButton].setText("ME");
 		
 		for (JButton button : buttonArray) {panel.add(button);}
 		window.add(panel);
+		
 		window.setVisible(true);
-		
-		Thread.sleep(400);
-
-		window.remove(panel);
-		for (JButton button : buttonArray) {panel.remove(button);}
+		Thread.sleep(1000);
+		buttonArray[hiddenButton].setText("ME");
+		Thread.sleep(100);
 		buttonArray[hiddenButton].setText("");
-		for (JButton button : buttonArray) {panel.add(button);}
-		window.add(panel);
 	}
 
 	@Override
